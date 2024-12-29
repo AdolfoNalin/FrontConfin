@@ -69,7 +69,7 @@
             // 
             sairToolStripMenuItem.Image = Properties.Resources.Sair32X321;
             sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            sairToolStripMenuItem.Size = new Size(180, 22);
+            sairToolStripMenuItem.Size = new Size(93, 22);
             sairToolStripMenuItem.Text = "Sair";
             sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
             // 
@@ -84,21 +84,21 @@
             // 
             estadoToolStripMenuItem.Image = Properties.Resources.Estado32X32;
             estadoToolStripMenuItem.Name = "estadoToolStripMenuItem";
-            estadoToolStripMenuItem.Size = new Size(180, 22);
+            estadoToolStripMenuItem.Size = new Size(111, 22);
             estadoToolStripMenuItem.Text = "Estado";
             // 
             // cidadeToolStripMenuItem
             // 
             cidadeToolStripMenuItem.Image = Properties.Resources.Cidade32X32;
             cidadeToolStripMenuItem.Name = "cidadeToolStripMenuItem";
-            cidadeToolStripMenuItem.Size = new Size(180, 22);
+            cidadeToolStripMenuItem.Size = new Size(111, 22);
             cidadeToolStripMenuItem.Text = "Cidade";
             // 
             // pessoaToolStripMenuItem
             // 
             pessoaToolStripMenuItem.Image = Properties.Resources.Pessoa32X32;
             pessoaToolStripMenuItem.Name = "pessoaToolStripMenuItem";
-            pessoaToolStripMenuItem.Size = new Size(180, 22);
+            pessoaToolStripMenuItem.Size = new Size(111, 22);
             pessoaToolStripMenuItem.Text = "Pessoa";
             // 
             // lançamentoToolStripMenuItem
@@ -112,7 +112,7 @@
             // 
             contaToolStripMenuItem.Image = Properties.Resources.Conta32X32;
             contaToolStripMenuItem.Name = "contaToolStripMenuItem";
-            contaToolStripMenuItem.Size = new Size(180, 22);
+            contaToolStripMenuItem.Size = new Size(106, 22);
             contaToolStripMenuItem.Text = "Conta";
             // 
             // configuraçõesToolStripMenuItem
@@ -181,6 +181,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu";
             WindowState = FormWindowState.Maximized;
+            Load += frmMenu_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             panel1.ResumeLayout(false);
@@ -205,7 +206,7 @@
         private ToolStripMenuItem usuárioToolStripMenuItem;
         private Panel panel1;
         private Panel panel2;
-        private Label lblUser;
         private PictureBox pictureBox1;
+        public Label lblUser;
     }
 }
