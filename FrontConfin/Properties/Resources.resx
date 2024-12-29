@@ -124,6 +124,9 @@
   <data name="Conta32X32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Conta32X32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Cancelar32X32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cancelar32X32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Financeiro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Financeiro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -133,13 +136,22 @@
   <data name="Sair32X32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sair32X32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Usuario32X32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Usuario32X32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Confirmar32X32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Confirmar32X32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Estado32X32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Estado32X32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sair32X321" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sair32X321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Usuario32X32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Usuario32X32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="UserAvatar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UserAvatar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
