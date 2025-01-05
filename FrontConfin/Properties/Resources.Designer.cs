@@ -103,6 +103,16 @@ namespace FrontConfin.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Editar32X32 {
+            get {
+                object obj = ResourceManager.GetObject("Editar32X32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Estado32X32 {
             get {
                 object obj = ResourceManager.GetObject("Estado32X32", resourceCulture);
@@ -113,9 +123,39 @@ namespace FrontConfin.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Excluir32X32 {
+            get {
+                object obj = ResourceManager.GetObject("Excluir32X32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Financeiro {
             get {
                 object obj = ResourceManager.GetObject("Financeiro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Lupa32X32 {
+            get {
+                object obj = ResourceManager.GetObject("Lupa32X32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Novo32X32 {
+            get {
+                object obj = ResourceManager.GetObject("Novo32X32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -146,6 +186,76 @@ namespace FrontConfin.Properties {
         internal static System.Drawing.Bitmap Sair32X321 {
             get {
                 object obj = ResourceManager.GetObject("Sair32X321", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Salvar32X32 {
+            get {
+                object obj = ResourceManager.GetObject("Salvar32X32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SetaAnterior32X32 {
+            get {
+                object obj = ResourceManager.GetObject("SetaAnterior32X32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SetaPrimeira32X32 {
+            get {
+                object obj = ResourceManager.GetObject("SetaPrimeira32X32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SetaProxima {
+            get {
+                object obj = ResourceManager.GetObject("SetaProxima", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SetaProxima1 {
+            get {
+                object obj = ResourceManager.GetObject("SetaProxima1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Setaproxima32X32 {
+            get {
+                object obj = ResourceManager.GetObject("Setaproxima32X32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SetaUltima32X32 {
+            get {
+                object obj = ResourceManager.GetObject("SetaUltima32X32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
