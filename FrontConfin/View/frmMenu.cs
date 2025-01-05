@@ -25,7 +25,7 @@ namespace FrontConfin.View
         private void PermissonUser()
         {
             usuárioToolStripMenuItem.Enabled = false;
-            
+
             if (UserSession.Function.ToUpper() == "Gerente".ToUpper())
             {
                 usuárioToolStripMenuItem.Enabled = true;
@@ -43,6 +43,12 @@ namespace FrontConfin.View
         private void frmMenu_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void estadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmInsertState screen = new frmInsertState();
+            screen.ShowDialog();
         }
     }
 }

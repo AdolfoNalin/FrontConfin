@@ -84,21 +84,22 @@
             // 
             estadoToolStripMenuItem.Image = Properties.Resources.Estado32X32;
             estadoToolStripMenuItem.Name = "estadoToolStripMenuItem";
-            estadoToolStripMenuItem.Size = new Size(111, 22);
+            estadoToolStripMenuItem.Size = new Size(180, 22);
             estadoToolStripMenuItem.Text = "Estado";
+            estadoToolStripMenuItem.Click += estadoToolStripMenuItem_Click;
             // 
             // cidadeToolStripMenuItem
             // 
             cidadeToolStripMenuItem.Image = Properties.Resources.Cidade32X32;
             cidadeToolStripMenuItem.Name = "cidadeToolStripMenuItem";
-            cidadeToolStripMenuItem.Size = new Size(111, 22);
+            cidadeToolStripMenuItem.Size = new Size(180, 22);
             cidadeToolStripMenuItem.Text = "Cidade";
             // 
             // pessoaToolStripMenuItem
             // 
             pessoaToolStripMenuItem.Image = Properties.Resources.Pessoa32X32;
             pessoaToolStripMenuItem.Name = "pessoaToolStripMenuItem";
-            pessoaToolStripMenuItem.Size = new Size(111, 22);
+            pessoaToolStripMenuItem.Size = new Size(180, 22);
             pessoaToolStripMenuItem.Text = "Pessoa";
             // 
             // lançamentoToolStripMenuItem
