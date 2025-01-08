@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace FrontConfin.Model
 {
-    public static class UserSession 
+    public static class UserSession
     {
         public static Guid Id { get; set; }
         public static string Name { get; set; }
         public static string Login { get; set; }
         public static string Function { get; set; }
+        public static string Token { get; set; }
     }
 }
