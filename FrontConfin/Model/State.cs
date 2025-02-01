@@ -8,8 +8,7 @@ namespace FrontConfin.Model
 {
     public class State
     {
-        public Guid Id { get; set; }
+        public string Sigla { get; set; }
         public string Name { get; set; }
-        public string Acronym { get; set; }
     }
 }
