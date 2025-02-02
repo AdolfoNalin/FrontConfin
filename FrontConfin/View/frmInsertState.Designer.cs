@@ -40,7 +40,7 @@
             btnPrimary = new Button();
             btnPrevious = new Button();
             btnNext = new Button();
-            button4 = new Button();
+            btnEnd = new Button();
             label1 = new Label();
             txtTake = new TextBox();
             label2 = new Label();
@@ -48,29 +48,29 @@
             panel1 = new Panel();
             panel4 = new Panel();
             panel5 = new Panel();
+            panel2 = new Panel();
+            cbDesc = new CheckBox();
+            btnSearch = new Button();
+            txtSearch = new TextBox();
             TabControl1 = new TabControl();
             tpRegistration = new TabPage();
-            dataGridView1 = new DataGridView();
+            dgState = new DataGridView();
             tpDatails = new TabPage();
             txtName = new TextBox();
             lblName = new Label();
             txtAcronym = new TextBox();
             btnAcronym = new Label();
-            panel2 = new Panel();
-            txtSearch = new TextBox();
-            btnSearch = new Button();
-            cbDesc = new CheckBox();
             panel3.SuspendLayout();
             panel7.SuspendLayout();
             panel6.SuspendLayout();
             panel1.SuspendLayout();
             panel4.SuspendLayout();
             panel5.SuspendLayout();
+            panel2.SuspendLayout();
             TabControl1.SuspendLayout();
             tpRegistration.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgState).BeginInit();
             tpDatails.SuspendLayout();
-            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // btnExit
@@ -117,6 +117,7 @@
             btnCancel.Text = "Calcelar";
             btnCancel.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // btnSave
             // 
@@ -129,6 +130,7 @@
             btnSave.Text = "Salvar";
             btnSave.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // panel6
             // 
@@ -152,18 +154,20 @@
             btnDelete.Text = "Excluir";
             btnDelete.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // btnUpdate
             // 
             btnUpdate.Image = Properties.Resources.Editar32X32;
             btnUpdate.ImageAlign = ContentAlignment.TopLeft;
-            btnUpdate.Location = new Point(135, 6);
+            btnUpdate.Location = new Point(136, 6);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(103, 45);
             btnUpdate.TabIndex = 3;
             btnUpdate.Text = "Alterar";
             btnUpdate.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // btnNew
             // 
@@ -176,6 +180,7 @@
             btnNew.Text = "Novo";
             btnNew.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnNew.UseVisualStyleBackColor = true;
+            btnNew.Click += btnNew_Click;
             // 
             // btnPrimary
             // 
@@ -188,6 +193,7 @@
             btnPrimary.Text = "Primeiro";
             btnPrimary.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnPrimary.UseVisualStyleBackColor = true;
+            btnPrimary.Click += btnPrimary_Click;
             // 
             // btnPrevious
             // 
@@ -200,6 +206,7 @@
             btnPrevious.Text = "Anterior";
             btnPrevious.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnPrevious.UseVisualStyleBackColor = true;
+            btnPrevious.Click += btnPrevious_Click;
             // 
             // btnNext
             // 
@@ -212,18 +219,20 @@
             btnNext.Text = "Próxima";
             btnNext.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnNext.UseVisualStyleBackColor = true;
+            btnNext.Click += btnNext_Click;
             // 
-            // button4
+            // btnEnd
             // 
-            button4.Image = Properties.Resources.SetaUltima32X32;
-            button4.ImageAlign = ContentAlignment.MiddleRight;
-            button4.Location = new Point(337, 12);
-            button4.Name = "button4";
-            button4.Size = new Size(103, 45);
-            button4.TabIndex = 4;
-            button4.Text = "button4";
-            button4.TextImageRelation = TextImageRelation.TextBeforeImage;
-            button4.UseVisualStyleBackColor = true;
+            btnEnd.Image = Properties.Resources.SetaUltima32X32;
+            btnEnd.ImageAlign = ContentAlignment.MiddleRight;
+            btnEnd.Location = new Point(337, 12);
+            btnEnd.Name = "btnEnd";
+            btnEnd.Size = new Size(103, 45);
+            btnEnd.TabIndex = 4;
+            btnEnd.Text = "Ultima";
+            btnEnd.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnEnd.UseVisualStyleBackColor = true;
+            btnEnd.Click += btnEnd_Click;
             // 
             // label1
             // 
@@ -238,7 +247,7 @@
             // 
             txtTake.Location = new Point(154, 68);
             txtTake.Name = "txtTake";
-            txtTake.Size = new Size(22, 23);
+            txtTake.Size = new Size(30, 23);
             txtTake.TabIndex = 7;
             txtTake.TextAlign = HorizontalAlignment.Right;
             // 
@@ -255,7 +264,7 @@
             // 
             txtSkip.Location = new Point(254, 68);
             txtSkip.Name = "txtSkip";
-            txtSkip.Size = new Size(22, 23);
+            txtSkip.Size = new Size(28, 23);
             txtSkip.TabIndex = 9;
             txtSkip.TextAlign = HorizontalAlignment.Right;
             // 
@@ -265,7 +274,7 @@
             panel1.Controls.Add(label2);
             panel1.Controls.Add(txtTake);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(button4);
+            panel1.Controls.Add(btnEnd);
             panel1.Controls.Add(btnNext);
             panel1.Controls.Add(btnPrevious);
             panel1.Controls.Add(btnPrimary);
@@ -295,6 +304,47 @@
             panel5.Size = new Size(945, 100);
             panel5.TabIndex = 3;
             // 
+            // panel2
+            // 
+            panel2.Controls.Add(cbDesc);
+            panel2.Controls.Add(btnSearch);
+            panel2.Controls.Add(txtSearch);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(445, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(341, 100);
+            panel2.TabIndex = 5;
+            // 
+            // cbDesc
+            // 
+            cbDesc.AutoSize = true;
+            cbDesc.Location = new Point(15, 78);
+            cbDesc.Name = "cbDesc";
+            cbDesc.Size = new Size(89, 19);
+            cbDesc.TabIndex = 7;
+            cbDesc.Text = "Descresente";
+            cbDesc.UseVisualStyleBackColor = true;
+            // 
+            // btnSearch
+            // 
+            btnSearch.Image = Properties.Resources.Lupa32X32;
+            btnSearch.ImageAlign = ContentAlignment.TopLeft;
+            btnSearch.Location = new Point(224, 18);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(99, 45);
+            btnSearch.TabIndex = 6;
+            btnSearch.Text = "Pesquisar";
+            btnSearch.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
+            // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(15, 30);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(192, 23);
+            txtSearch.TabIndex = 0;
+            // 
             // TabControl1
             // 
             TabControl1.Alignment = TabAlignment.Left;
@@ -311,7 +361,7 @@
             // 
             // tpRegistration
             // 
-            tpRegistration.Controls.Add(dataGridView1);
+            tpRegistration.Controls.Add(dgState);
             tpRegistration.Location = new Point(27, 4);
             tpRegistration.Name = "tpRegistration";
             tpRegistration.Padding = new Padding(3);
@@ -320,15 +370,20 @@
             tpRegistration.Text = "Registros";
             tpRegistration.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgState
             // 
-            dataGridView1.BackgroundColor = SystemColors.ActiveCaption;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(3, 3);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(908, 274);
-            dataGridView1.TabIndex = 0;
+            dgState.AllowUserToAddRows = false;
+            dgState.AllowUserToDeleteRows = false;
+            dgState.BackgroundColor = SystemColors.ActiveCaption;
+            dgState.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgState.Dock = DockStyle.Fill;
+            dgState.Location = new Point(3, 3);
+            dgState.Name = "dgState";
+            dgState.ReadOnly = true;
+            dgState.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgState.Size = new Size(908, 274);
+            dgState.TabIndex = 0;
+            dgState.SelectionChanged += dgState_SelectionChanged;
             // 
             // tpDatails
             // 
@@ -339,7 +394,7 @@
             tpDatails.Location = new Point(27, 4);
             tpDatails.Name = "tpDatails";
             tpDatails.Padding = new Padding(3);
-            tpDatails.Size = new Size(904, 280);
+            tpDatails.Size = new Size(914, 280);
             tpDatails.TabIndex = 1;
             tpDatails.Text = "Detalhes";
             tpDatails.UseVisualStyleBackColor = true;
@@ -379,46 +434,6 @@
             btnAcronym.TabIndex = 0;
             btnAcronym.Text = "Sigla:";
             // 
-            // panel2
-            // 
-            panel2.Controls.Add(cbDesc);
-            panel2.Controls.Add(btnSearch);
-            panel2.Controls.Add(txtSearch);
-            panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(445, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(341, 100);
-            panel2.TabIndex = 5;
-            // 
-            // txtSearch
-            // 
-            txtSearch.Location = new Point(15, 30);
-            txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(192, 23);
-            txtSearch.TabIndex = 0;
-            // 
-            // btnSearch
-            // 
-            btnSearch.Image = Properties.Resources.Lupa32X32;
-            btnSearch.ImageAlign = ContentAlignment.TopLeft;
-            btnSearch.Location = new Point(224, 18);
-            btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(99, 45);
-            btnSearch.TabIndex = 6;
-            btnSearch.Text = "Pesquisar";
-            btnSearch.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // cbDesc
-            // 
-            cbDesc.AutoSize = true;
-            cbDesc.Location = new Point(15, 78);
-            cbDesc.Name = "cbDesc";
-            cbDesc.Size = new Size(89, 19);
-            cbDesc.TabIndex = 7;
-            cbDesc.Text = "Descresente";
-            cbDesc.UseVisualStyleBackColor = true;
-            // 
             // frmInsertState
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -427,9 +442,11 @@
             Controls.Add(TabControl1);
             Controls.Add(panel5);
             Controls.Add(panel3);
+            KeyPreview = true;
             Name = "frmInsertState";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmInsertState";
+            KeyDown += frmInsertState_KeyDown;
             panel3.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel6.ResumeLayout(false);
@@ -437,13 +454,13 @@
             panel1.PerformLayout();
             panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);
-            TabControl1.ResumeLayout(false);
-            tpRegistration.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            tpDatails.ResumeLayout(false);
-            tpDatails.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            TabControl1.ResumeLayout(false);
+            tpRegistration.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgState).EndInit();
+            tpDatails.ResumeLayout(false);
+            tpDatails.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -453,7 +470,7 @@
         private Button btnPrimary;
         private Button btnPrevious;
         private Button btnNext;
-        private Button button4;
+        private Button btnEnd;
         private Label label1;
         private TextBox txtTake;
         private Label label2;
@@ -464,7 +481,7 @@
         private TabControl TabControl1;
         private TabPage tpRegistration;
         private TabPage tpDatails;
-        private DataGridView dataGridView1;
+        private DataGridView dgState;
         private Panel panel7;
         private Panel panel6;
         private Button btnUpdate;
