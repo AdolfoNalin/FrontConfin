@@ -43,6 +43,7 @@ namespace FrontConfin.View
                 UserSession.Name = response.User.Name;
                 UserSession.Login = response.User.Login;
                 UserSession.Function = response.User.Function;
+                UserSession.Token = response.Token;
 
                 frmMenu screen = new frmMenu();
                 this.Hide();
