@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace FrontConfin.Model
 {
-    public class City : State
+    public class City 
     {
-        
+        public string StateSigla { get; set; }
+        public string Name { get; set; }
     }
 }
