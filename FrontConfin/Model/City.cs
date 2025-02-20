@@ -8,6 +8,7 @@ namespace FrontConfin.Model
 {
     public class City 
     {
+        public Guid Id { get; set; }
         public string StateSigla { get; set; }
         public string Name { get; set; }
     }
