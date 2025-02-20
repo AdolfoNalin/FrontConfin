@@ -94,6 +94,7 @@
             cidadeToolStripMenuItem.Name = "cidadeToolStripMenuItem";
             cidadeToolStripMenuItem.Size = new Size(180, 22);
             cidadeToolStripMenuItem.Text = "Cidade";
+            cidadeToolStripMenuItem.Click += cidadeToolStripMenuItem_Click;
             // 
             // pessoaToolStripMenuItem
             // 

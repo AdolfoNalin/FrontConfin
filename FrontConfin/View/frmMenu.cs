@@ -50,5 +50,12 @@ namespace FrontConfin.View
             frmInsertState screen = new frmInsertState();
             screen.ShowDialog();
         }
+
+        private void cidadeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCity screem = new frmCity();
+            screem.ShowDialog();
+            screem.Close();
+        }
     }
 }

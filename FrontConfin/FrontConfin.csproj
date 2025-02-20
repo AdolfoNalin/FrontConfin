@@ -9,6 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Model\Pagination\**" />
+    <EmbeddedResource Remove="Model\Pagination\**" />
+    <None Remove="Model\Pagination\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="appsettings.json" />
   </ItemGroup>
 
