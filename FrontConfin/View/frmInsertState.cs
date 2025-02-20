@@ -176,7 +176,7 @@ namespace FrontConfin.View
         }
         #endregion
 
-        #region btnNew_click
+        #region btnNext_click
         private void btnNext_Click(object sender, EventArgs e)
         {
             decimal page = pagination.AllLine / pagination.Take;
@@ -236,11 +236,13 @@ namespace FrontConfin.View
         }
         #endregion
 
+        #region dgState_SelectionChanged
         private void dgState_SelectionChanged(object sender, EventArgs e)
         {
             UpdateDatalhes();
         }
-
+        #endregion
+        
         #region btnDelete_click
         private async void btnDelete_Click(object sender, EventArgs e)
         {
@@ -248,8 +250,8 @@ namespace FrontConfin.View
 
             if (dgState.SelectedRows.Count > 0)
             {
-                state = (State) dgState.SelectedRows[0].DataBoundItem;
-                
+                state = (State)dgState.SelectedRows[0].DataBoundItem;
+
                 DialogResult resp = MessageBox.Show($"Deja excluir esse estado {state.Sigla}", "ATENÇÃO", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (resp == DialogResult.OK)
@@ -264,5 +266,10 @@ namespace FrontConfin.View
             }
         }
         #endregion
+
+        private void frmInsertState_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

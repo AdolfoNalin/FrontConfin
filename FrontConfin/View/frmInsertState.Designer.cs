@@ -446,6 +446,7 @@
             Name = "frmInsertState";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmInsertState";
+            Load += frmInsertState_Load;
             KeyDown += frmInsertState_KeyDown;
             panel3.ResumeLayout(false);
             panel7.ResumeLayout(false);

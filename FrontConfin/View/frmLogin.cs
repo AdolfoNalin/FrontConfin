@@ -38,7 +38,7 @@ namespace FrontConfin.View
                 };
 
                 UserResponse response = await UserService.Login(login);
-
+                
                 UserSession.Id = response.User.Id;
                 UserSession.Name = response.User.Name;
                 UserSession.Login = response.User.Login;
