@@ -34,7 +34,7 @@ namespace FrontConfin.View
         }
         #endregion
 
-        #region UpdateDate
+        #region UpdateData
         /// <summary>
         /// Metodo que autaliza a os dados do DataGrid
         /// </summary>
@@ -213,8 +213,8 @@ namespace FrontConfin.View
         }
         #endregion
 
-        #region UpdateDails
-        private void UpdateDatalhes()
+        #region UpdateDetails
+        private void UpdateDetails()
         {
             State state = new State();
 
