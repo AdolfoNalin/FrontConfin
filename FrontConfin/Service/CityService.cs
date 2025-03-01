@@ -94,7 +94,7 @@ namespace FrontConfin.Service
             try
             {
                 HttpClient client = ClientHttp.CreateHttpClient();
-
+               
                 HttpResponseMessage response = await client.GetAsync($"City/Pagination?value={value}&skip={skip}&take={take}&desc{desc}");
 
                 if (response.IsSuccessStatusCode)
@@ -212,7 +212,6 @@ namespace FrontConfin.Service
             try
             {
                 HttpClient client = ClientHttp.CreateHttpClient();
-                client.BaseAddress = new Uri("http://localhost:5024/api/");
 
                 HttpResponseMessage reposn = await client.DeleteAsync($"City/{id}");
 
