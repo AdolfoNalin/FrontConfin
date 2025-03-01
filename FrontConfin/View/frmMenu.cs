@@ -57,5 +57,12 @@ namespace FrontConfin.View
             screem.ShowDialog();
             screem.Close();
         }
+
+        private void pessoaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPersonal screen = new frmPersonal();
+            screen.ShowDialog();
+            screen.Close();
+        }
     }
 }

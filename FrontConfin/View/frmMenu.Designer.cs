@@ -102,6 +102,7 @@
             pessoaToolStripMenuItem.Name = "pessoaToolStripMenuItem";
             pessoaToolStripMenuItem.Size = new Size(180, 22);
             pessoaToolStripMenuItem.Text = "Pessoa";
+            pessoaToolStripMenuItem.Click += pessoaToolStripMenuItem_Click;
             // 
             // lançamentoToolStripMenuItem
             // 

@@ -239,7 +239,7 @@ namespace FrontConfin.View
         #region dgState_SelectionChanged
         private void dgState_SelectionChanged(object sender, EventArgs e)
         {
-            UpdateDatalhes();
+            UpdateDetails();
         }
         #endregion
         
