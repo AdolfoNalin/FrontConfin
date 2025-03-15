@@ -13,13 +13,6 @@ namespace FrontConfin.Service
 {
     public class PersonaService
     {
-        private static HttpClient _client;
-
-        public PersonaService()
-        {
-            _client = ClientHttp.CreateHttpClient();
-        }
-
         #region GetAll
         /// <summary>
         /// Mostra todos as pessoas que estão registradas
@@ -30,7 +23,8 @@ namespace FrontConfin.Service
             List<Persona> list = new List<Persona>();
             try
             {
-                HttpResponseMessage response = await _client.GetAsync("Persona");
+                HttpClient client = ClientHttp.CreateHttpClient();
+                HttpResponseMessage response = await client.GetAsync("Persona");
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -100,7 +94,8 @@ namespace FrontConfin.Service
             List<Persona> list = new List<Persona>();
             try
             {
-                HttpResponseMessage response = await _client.GetAsync($"Search?value={value}");
+                HttpClient client = ClientHttp.CreateHttpClient();
+                HttpResponseMessage response = await client.GetAsync($"Search?value={value}");
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -134,17 +129,19 @@ namespace FrontConfin.Service
             {
                 string message = "";
 
-                HttpResponseMessage response = await _client.PostAsJsonAsync("Persona", persona);
+                HttpClient client = ClientHttp.CreateHttpClient();
+
+                HttpResponseMessage response = await client.PostAsJsonAsync("Persona", persona);
 
                 if (response.IsSuccessStatusCode)
                 {
-                    message = await response.Content.ReadAsStringAsync();
+                    message += await response.Content.ReadAsStringAsync();
                     MessageBox.Show(message);
                     return true;
                 }
                 else
                 {
-                    message = await response.Content.ReadAsStringAsync();
+                    message += await response.Content.ReadAsStringAsync();
                     MessageBox.Show(message);
                     return false;
                 }
@@ -168,7 +165,9 @@ namespace FrontConfin.Service
             string message = "";
             try
             {
-                HttpResponseMessage response = await _client.PutAsJsonAsync("Persona", persona);
+                HttpClient client = ClientHttp.CreateHttpClient();
+
+                HttpResponseMessage response = await client.PutAsJsonAsync("Persona", persona);
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -200,7 +199,8 @@ namespace FrontConfin.Service
             string message = "";
             try
             {
-                HttpResponseMessage response = await _client.DeleteAsync($"Persona/{id}"); message = await response.Content.ReadAsStringAsync();
+                HttpClient client = ClientHttp.CreateHttpClient();
+                HttpResponseMessage response = await client.DeleteAsync($"Persona/{id}"); 
 
                 if (response.IsSuccessStatusCode)
                 {

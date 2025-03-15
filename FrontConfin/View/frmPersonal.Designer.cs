@@ -199,7 +199,6 @@
             // mtbWage
             // 
             mtbWage.Location = new Point(30, 158);
-            mtbWage.Mask = "$";
             mtbWage.Name = "mtbWage";
             mtbWage.Size = new Size(96, 23);
             mtbWage.TabIndex = 13;
@@ -338,6 +337,7 @@
             cbDesc.TabIndex = 7;
             cbDesc.Text = "Descresente";
             cbDesc.UseVisualStyleBackColor = true;
+            cbDesc.CheckedChanged += cbDesc_CheckedChanged;
             // 
             // btnSearch
             // 
@@ -350,6 +350,7 @@
             btnSearch.Text = "Pesquisar";
             btnSearch.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
             // txtSearch
             // 
@@ -357,6 +358,7 @@
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(192, 23);
             txtSearch.TabIndex = 0;
+            txtSearch.KeyPress += txtSearch_KeyPress;
             // 
             // panel1
             // 
@@ -480,6 +482,7 @@
             btnExit.Text = "Sair";
             btnExit.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnExit_Click;
             // 
             // panel3
             // 
@@ -512,6 +515,7 @@
             btnCancel.Text = "Calcelar";
             btnCancel.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // btnSave
             // 
@@ -585,8 +589,10 @@
             Controls.Add(panel5);
             Controls.Add(panel3);
             Name = "frmPersonal";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmPersonal";
             Load += frmPersonal_Load;
+            KeyDown += frmPersonal_KeyDown;
             TabControl1.ResumeLayout(false);
             tpRegistration.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgPersona).EndInit();

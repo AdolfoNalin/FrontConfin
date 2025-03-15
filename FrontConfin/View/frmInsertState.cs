@@ -40,12 +40,24 @@ namespace FrontConfin.View
         /// </summary>
         private async void UpdateData()
         {
-            int.TryParse(txtSkip.Text, out int skip);
-            int.TryParse(txtTake.Text, out int take);
+            try
+            {
+                int.TryParse(txtSkip.Text, out int skip);
+                int.TryParse(txtTake.Text, out int take);
 
-            pagination = await StateService.GetPagination(txtSearch.Text, skip: skip, take: take, desc: cbDesc.Checked);
+                pagination = await StateService.GetPagination(txtSearch.Text, skip: skip, take: take, desc: cbDesc.Checked);
 
-            dgState.DataSource = pagination.Data;
+                dgState.DataSource = pagination.Data ?? throw new NullReferenceException("A lista está vazia, teste novamente");
+            }
+            catch(NullReferenceException ne)
+            {
+                MessageBox.Show(ne.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
         #endregion
 
@@ -242,7 +254,7 @@ namespace FrontConfin.View
             UpdateDetails();
         }
         #endregion
-        
+
         #region btnDelete_click
         private async void btnDelete_Click(object sender, EventArgs e)
         {
@@ -267,9 +279,18 @@ namespace FrontConfin.View
         }
         #endregion
 
-        private void frmInsertState_Load(object sender, EventArgs e)
+        #region txtSearch_KeyPress
+        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            UpdateData();
         }
+        #endregion
+
+        #region cbDesc_CheckedChanged
+        private void cbDesc_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateData();
+        }
+        #endregion
     }
 }

@@ -25,6 +25,7 @@ namespace FrontConfin.View
             InitializeComponent();
             txtSkip.Text = "1";
             txtTake.Text = "10";
+            txtId.Enabled = false;
             UpdateData();
         }
 
@@ -34,7 +35,7 @@ namespace FrontConfin.View
             int.TryParse(txtSkip.Text, out int skip);
             int.TryParse(txtTake.Text, out int take);
 
-            pagination = await CityService.GetPagination(txtSearch.Text, take: take, skip: skip,cbDesc.Checked);
+            pagination = await CityService.GetPagination(txtSearch.Text, take: take, skip: skip, cbDesc.Checked);
 
             dgCity.DataSource = pagination.Data;
         }
@@ -155,6 +156,7 @@ namespace FrontConfin.View
                 if (value)
                 {
                     TabControl1.SelectedTab = tpRegistration;
+                    UpdateData();
                 }
             }
             catch (ArgumentNullException ae)
@@ -185,10 +187,7 @@ namespace FrontConfin.View
         #region frmCity_KeyDown
         private void frmCity_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                btnSave_Click(sender, e);
-            }
+            UpdateData();
         }
         #endregion
 
@@ -203,41 +202,6 @@ namespace FrontConfin.View
             else
             {
                 MessageBox.Show("Impossivel voltar para a primeira página");
-            }
-        }
-        #endregion
-
-        #region btnPrevious_click
-        private void btnPrevious_Click(object sender, EventArgs e)
-        {
-            if (pagination.Skip > 1)
-            {
-                pagination.Skip--;
-                txtSkip.Text = pagination.Skip.ToString();
-                UpdateData();
-            }
-            else
-            {
-                MessageBox.Show("Impossivel ir para a página 0");
-            }
-        }
-        #endregion
-
-        #region btnNext_click
-        private void btnNext_Click(object sender, EventArgs e)
-        {
-            decimal page = pagination.AllLine / pagination.Take;
-            int amountPage = (int)Math.Ceiling(page);
-
-            if (pagination.Skip < amountPage)
-            {
-                pagination.Skip++;
-                txtSkip.Text = pagination.Skip.ToString();
-                UpdateData();
-            }
-            else
-            {
-                MessageBox.Show("Impossivel ir para a proxima página");
             }
         }
         #endregion
@@ -267,5 +231,52 @@ namespace FrontConfin.View
             UpdateData();
         }
         #endregion
+
+        #region btnNext_Click
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            decimal page = pagination.AllLine / pagination.Take;
+            int amountPage = (int)Math.Ceiling(page);
+
+            if (pagination.Skip < amountPage)
+            {
+                pagination.Skip++;
+                txtSkip.Text = pagination.Skip.ToString();
+                UpdateData();
+            }
+            else
+            {
+                MessageBox.Show("Impossivel ir para a proxima página");
+            }
+        }
+        #endregion
+
+        #region btnPrevious_Click
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            if (pagination.Skip > 1)
+            {
+                pagination.Skip--;
+                txtSkip.Text = pagination.Skip.ToString();
+                UpdateData();
+            }
+            else
+            {
+                MessageBox.Show("Impossivel ir para a página 0");
+            }
+        }
+        #endregion
+
+        #region cbDesc_CheckedChanged
+        private void cbDesc_CheckedChanged(object sender, EventArgs e)
+        {
+            UpdateData();
+        }
+        #endregion
+
+        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            UpdateData();
+        }
     }
 }

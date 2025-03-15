@@ -64,5 +64,11 @@ namespace FrontConfin.View
             screen.ShowDialog();
             screen.Close();
         }
+
+        private void contaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAccount screen = new frmAccount();
+            screen.ShowDialog();
+        }
     }
 }

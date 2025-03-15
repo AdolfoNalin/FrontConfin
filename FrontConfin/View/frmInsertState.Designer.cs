@@ -324,6 +324,7 @@
             cbDesc.TabIndex = 7;
             cbDesc.Text = "Descresente";
             cbDesc.UseVisualStyleBackColor = true;
+            cbDesc.CheckedChanged += cbDesc_CheckedChanged;
             // 
             // btnSearch
             // 
@@ -344,6 +345,7 @@
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(192, 23);
             txtSearch.TabIndex = 0;
+            txtSearch.KeyPress += txtSearch_KeyPress;
             // 
             // TabControl1
             // 
@@ -446,7 +448,6 @@
             Name = "frmInsertState";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmInsertState";
-            Load += frmInsertState_Load;
             KeyDown += frmInsertState_KeyDown;
             panel3.ResumeLayout(false);
             panel7.ResumeLayout(false);

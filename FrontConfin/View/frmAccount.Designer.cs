@@ -1,6 +1,6 @@
 ﻿namespace FrontConfin.View
 {
-    partial class frmCity
+    partial class frmAccount
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,21 @@
         {
             TabControl1 = new TabControl();
             tpRegistration = new TabPage();
-            dgCity = new DataGridView();
+            dgAccount = new DataGridView();
             tpDatails = new TabPage();
+            label7 = new Label();
+            cbPersona = new ComboBox();
+            label6 = new Label();
+            cbSituation = new ComboBox();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
+            mtbPaymentDate = new MaskedTextBox();
+            mtbDateDue = new MaskedTextBox();
             txtId = new TextBox();
             lblId = new Label();
-            cbState = new ComboBox();
-            txtName = new TextBox();
-            lblName = new Label();
-            btnAcronym = new Label();
+            txtDescription = new TextBox();
+            lblDescription = new Label();
             panel5 = new Panel();
             panel2 = new Panel();
             cbDesc = new CheckBox();
@@ -62,9 +69,10 @@
             btnDelete = new Button();
             btnUpdate = new Button();
             btnNew = new Button();
+            mtbValue = new MaskedTextBox();
             TabControl1.SuspendLayout();
             tpRegistration.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgCity).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgAccount).BeginInit();
             tpDatails.SuspendLayout();
             panel5.SuspendLayout();
             panel2.SuspendLayout();
@@ -86,47 +94,135 @@
             TabControl1.Multiline = true;
             TabControl1.Name = "TabControl1";
             TabControl1.SelectedIndex = 0;
-            TabControl1.Size = new Size(955, 288);
-            TabControl1.TabIndex = 7;
+            TabControl1.Size = new Size(957, 288);
+            TabControl1.TabIndex = 10;
             // 
             // tpRegistration
             // 
-            tpRegistration.Controls.Add(dgCity);
+            tpRegistration.Controls.Add(dgAccount);
             tpRegistration.Location = new Point(27, 4);
             tpRegistration.Name = "tpRegistration";
             tpRegistration.Padding = new Padding(3);
-            tpRegistration.Size = new Size(924, 280);
+            tpRegistration.Size = new Size(926, 280);
             tpRegistration.TabIndex = 0;
             tpRegistration.Text = "Registros";
             tpRegistration.UseVisualStyleBackColor = true;
             // 
-            // dgCity
+            // dgAccount
             // 
-            dgCity.BackgroundColor = SystemColors.ActiveCaption;
-            dgCity.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgCity.Dock = DockStyle.Fill;
-            dgCity.Location = new Point(3, 3);
-            dgCity.Name = "dgCity";
-            dgCity.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgCity.Size = new Size(918, 274);
-            dgCity.TabIndex = 0;
-            dgCity.SelectionChanged += dgCity_SelectionChanged;
+            dgAccount.BackgroundColor = SystemColors.ActiveCaption;
+            dgAccount.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgAccount.Dock = DockStyle.Fill;
+            dgAccount.Location = new Point(3, 3);
+            dgAccount.Name = "dgAccount";
+            dgAccount.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgAccount.Size = new Size(920, 274);
+            dgAccount.TabIndex = 0;
+            dgAccount.SelectionChanged += dgAccount_SelectionChanged;
             // 
             // tpDatails
             // 
+            tpDatails.Controls.Add(label7);
+            tpDatails.Controls.Add(cbPersona);
+            tpDatails.Controls.Add(label6);
+            tpDatails.Controls.Add(cbSituation);
+            tpDatails.Controls.Add(label5);
+            tpDatails.Controls.Add(mtbValue);
+            tpDatails.Controls.Add(label4);
+            tpDatails.Controls.Add(label3);
+            tpDatails.Controls.Add(mtbPaymentDate);
+            tpDatails.Controls.Add(mtbDateDue);
             tpDatails.Controls.Add(txtId);
             tpDatails.Controls.Add(lblId);
-            tpDatails.Controls.Add(cbState);
-            tpDatails.Controls.Add(txtName);
-            tpDatails.Controls.Add(lblName);
-            tpDatails.Controls.Add(btnAcronym);
+            tpDatails.Controls.Add(txtDescription);
+            tpDatails.Controls.Add(lblDescription);
             tpDatails.Location = new Point(27, 4);
             tpDatails.Name = "tpDatails";
             tpDatails.Padding = new Padding(3);
-            tpDatails.Size = new Size(924, 280);
+            tpDatails.Size = new Size(926, 280);
             tpDatails.TabIndex = 1;
             tpDatails.Text = "Detalhes";
             tpDatails.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(30, 145);
+            label7.Name = "label7";
+            label7.Size = new Size(46, 15);
+            label7.TabIndex = 16;
+            label7.Text = "Pessoa:";
+            // 
+            // cbPersona
+            // 
+            cbPersona.FormattingEnabled = true;
+            cbPersona.Location = new Point(27, 163);
+            cbPersona.Name = "cbPersona";
+            cbPersona.Size = new Size(284, 23);
+            cbPersona.TabIndex = 15;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(560, 145);
+            label6.Name = "label6";
+            label6.Size = new Size(55, 15);
+            label6.TabIndex = 14;
+            label6.Text = "Situação:";
+            // 
+            // cbSituation
+            // 
+            cbSituation.FormattingEnabled = true;
+            cbSituation.Items.AddRange(new object[] { "close", "open" });
+            cbSituation.Location = new Point(557, 163);
+            cbSituation.Name = "cbSituation";
+            cbSituation.Size = new Size(68, 23);
+            cbSituation.TabIndex = 13;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(560, 87);
+            label5.Name = "label5";
+            label5.Size = new Size(36, 15);
+            label5.TabIndex = 12;
+            label5.Text = "Valor:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(379, 145);
+            label4.Name = "label4";
+            label4.Size = new Size(114, 15);
+            label4.TabIndex = 10;
+            label4.Text = "Data de pagamento:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(379, 87);
+            label3.Name = "label3";
+            label3.Size = new Size(97, 15);
+            label3.TabIndex = 9;
+            label3.Text = "Data de validade:";
+            // 
+            // mtbPaymentDate
+            // 
+            mtbPaymentDate.Location = new Point(379, 163);
+            mtbPaymentDate.Mask = "00/00/0000";
+            mtbPaymentDate.Name = "mtbPaymentDate";
+            mtbPaymentDate.Size = new Size(58, 23);
+            mtbPaymentDate.TabIndex = 8;
+            mtbPaymentDate.ValidatingType = typeof(DateTime);
+            // 
+            // mtbDateDue
+            // 
+            mtbDateDue.Location = new Point(376, 105);
+            mtbDateDue.Mask = "00/00/0000";
+            mtbDateDue.Name = "mtbDateDue";
+            mtbDateDue.Size = new Size(61, 23);
+            mtbDateDue.TabIndex = 7;
+            mtbDateDue.ValidatingType = typeof(DateTime);
             // 
             // txtId
             // 
@@ -139,45 +235,28 @@
             // lblId
             // 
             lblId.AutoSize = true;
-            lblId.Location = new Point(33, 26);
+            lblId.Location = new Point(36, 29);
             lblId.Name = "lblId";
             lblId.Size = new Size(17, 15);
             lblId.TabIndex = 5;
             lblId.Text = "Id";
             // 
-            // cbState
+            // txtDescription
             // 
-            cbState.FormattingEnabled = true;
-            cbState.Location = new Point(27, 97);
-            cbState.Name = "cbState";
-            cbState.Size = new Size(46, 23);
-            cbState.TabIndex = 4;
+            txtDescription.CharacterCasing = CharacterCasing.Upper;
+            txtDescription.Location = new Point(30, 101);
+            txtDescription.Name = "txtDescription";
+            txtDescription.Size = new Size(288, 23);
+            txtDescription.TabIndex = 3;
             // 
-            // txtName
+            // lblDescription
             // 
-            txtName.CharacterCasing = CharacterCasing.Upper;
-            txtName.Location = new Point(96, 97);
-            txtName.Name = "txtName";
-            txtName.Size = new Size(222, 23);
-            txtName.TabIndex = 3;
-            // 
-            // lblName
-            // 
-            lblName.AutoSize = true;
-            lblName.Location = new Point(99, 80);
-            lblName.Name = "lblName";
-            lblName.Size = new Size(43, 15);
-            lblName.TabIndex = 2;
-            lblName.Text = "Nome:";
-            // 
-            // btnAcronym
-            // 
-            btnAcronym.AutoSize = true;
-            btnAcronym.Location = new Point(30, 79);
-            btnAcronym.Name = "btnAcronym";
-            btnAcronym.Size = new Size(35, 15);
-            btnAcronym.TabIndex = 0;
-            btnAcronym.Text = "Sigla:";
+            lblDescription.AutoSize = true;
+            lblDescription.Location = new Point(36, 87);
+            lblDescription.Name = "lblDescription";
+            lblDescription.Size = new Size(61, 15);
+            lblDescription.TabIndex = 2;
+            lblDescription.Text = "Descrição:";
             // 
             // panel5
             // 
@@ -187,8 +266,8 @@
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(0, 0);
             panel5.Name = "panel5";
-            panel5.Size = new Size(955, 100);
-            panel5.TabIndex = 6;
+            panel5.Size = new Size(957, 100);
+            panel5.TabIndex = 9;
             // 
             // panel2
             // 
@@ -198,7 +277,7 @@
             panel2.Dock = DockStyle.Fill;
             panel2.Location = new Point(445, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(351, 100);
+            panel2.Size = new Size(353, 100);
             panel2.TabIndex = 5;
             // 
             // cbDesc
@@ -339,7 +418,7 @@
             // 
             panel4.Controls.Add(btnExit);
             panel4.Dock = DockStyle.Right;
-            panel4.Location = new Point(796, 0);
+            panel4.Location = new Point(798, 0);
             panel4.Name = "panel4";
             panel4.Size = new Size(159, 100);
             panel4.TabIndex = 4;
@@ -364,15 +443,15 @@
             panel3.Dock = DockStyle.Bottom;
             panel3.Location = new Point(0, 388);
             panel3.Name = "panel3";
-            panel3.Size = new Size(955, 62);
-            panel3.TabIndex = 5;
+            panel3.Size = new Size(957, 62);
+            panel3.TabIndex = 8;
             // 
             // panel7
             // 
             panel7.Controls.Add(btnCancel);
             panel7.Controls.Add(btnSave);
             panel7.Dock = DockStyle.Right;
-            panel7.Location = new Point(703, 0);
+            panel7.Location = new Point(705, 0);
             panel7.Name = "panel7";
             panel7.Size = new Size(252, 62);
             panel7.TabIndex = 1;
@@ -453,22 +532,28 @@
             btnNew.UseVisualStyleBackColor = true;
             btnNew.Click += btnNew_Click;
             // 
-            // frmCity
+            // mtbValue
+            // 
+            mtbValue.Location = new Point(560, 105);
+            mtbValue.Name = "mtbValue";
+            mtbValue.Size = new Size(85, 23);
+            mtbValue.TabIndex = 11;
+            // 
+            // frmAccount
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(955, 450);
+            ClientSize = new Size(957, 450);
             Controls.Add(TabControl1);
             Controls.Add(panel5);
             Controls.Add(panel3);
-            Name = "frmCity";
+            Name = "frmAccount";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Cidade";
-            Load += frmCity_Load;
-            KeyDown += frmCity_KeyDown;
+            Text = "frmAccount";
+            Load += frmAccount_Load;
             TabControl1.ResumeLayout(false);
             tpRegistration.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgCity).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgAccount).EndInit();
             tpDatails.ResumeLayout(false);
             tpDatails.PerformLayout();
             panel5.ResumeLayout(false);
@@ -487,11 +572,12 @@
 
         private TabControl TabControl1;
         private TabPage tpRegistration;
-        private DataGridView dgCity;
+        private DataGridView dgAccount;
         private TabPage tpDatails;
-        private TextBox txtName;
-        private Label lblName;
-        private Label btnAcronym;
+        private TextBox txtId;
+        private Label lblId;
+        private TextBox txtDescription;
+        private Label lblDescription;
         private Panel panel5;
         private Panel panel2;
         private CheckBox cbDesc;
@@ -516,8 +602,15 @@
         private Button btnDelete;
         private Button btnUpdate;
         private Button btnNew;
-        private ComboBox cbState;
-        private TextBox txtId;
-        private Label lblId;
+        private Label label4;
+        private Label label3;
+        private MaskedTextBox mtbPaymentDate;
+        private MaskedTextBox mtbDateDue;
+        private Label label5;
+        private Label label6;
+        private ComboBox cbSituation;
+        private Label label7;
+        private ComboBox cbPersona;
+        private MaskedTextBox mtbValue;
     }
 }

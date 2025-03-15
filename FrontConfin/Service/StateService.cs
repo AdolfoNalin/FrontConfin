@@ -104,17 +104,16 @@ namespace FrontConfin.Service
         #region GetPagination
         public static async Task<PaginationResponse<State>> GetPagination(string value, int skip, int take, bool desc)
         {
-            PaginationResponse<State> pagination = new PaginationResponse<State>(new List<State>(), 1, 0, 10);
+            PaginationResponse<State> pagination = null;
 
             try
             {
                 HttpClient client = ClientHttp.CreateHttpClient();
-               
-                HttpResponseMessage response = await client.GetAsync($"?value={value}&skip={skip}&take={take}&desc{desc}");
+                HttpResponseMessage response = await client.GetAsync($"State/Pagination?value={value}&skip={skip}&take={take}&desc={desc}");
 
                 if (response.IsSuccessStatusCode)
                 {
-                    pagination = JsonConvert.DeserializeObject<PaginationResponse<State>>(await response.Content.ReadAsStringAsync() ?? throw new NullReferenceException("Lista está vazia, nenhum objeto econtrado"));
+                    pagination = JsonConvert.DeserializeObject<PaginationResponse<State>>(await response.Content.ReadAsStringAsync());
                 }
                 else
                 {
@@ -136,7 +135,7 @@ namespace FrontConfin.Service
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Aconteceu um erro:{1}", ex.Message);
+                MessageBox.Show(ex.Message);
                 return null;
             }
         }

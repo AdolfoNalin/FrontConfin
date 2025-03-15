@@ -115,8 +115,9 @@
             // 
             contaToolStripMenuItem.Image = Properties.Resources.Conta32X32;
             contaToolStripMenuItem.Name = "contaToolStripMenuItem";
-            contaToolStripMenuItem.Size = new Size(106, 22);
+            contaToolStripMenuItem.Size = new Size(180, 22);
             contaToolStripMenuItem.Text = "Conta";
+            contaToolStripMenuItem.Click += contaToolStripMenuItem_Click;
             // 
             // configuraçõesToolStripMenuItem
             // 

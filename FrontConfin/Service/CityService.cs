@@ -95,7 +95,7 @@ namespace FrontConfin.Service
             {
                 HttpClient client = ClientHttp.CreateHttpClient();
                
-                HttpResponseMessage response = await client.GetAsync($"City/Pagination?value={value}&skip={skip}&take={take}&desc{desc}");
+                HttpResponseMessage response = await client.GetAsync($"City/Pagination?value={value}&skip={skip}&take={take}&desc={desc}");
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -141,7 +141,6 @@ namespace FrontConfin.Service
                 }
 
                 HttpClient client = Helpers.ClientHttp.CreateHttpClient();
-                client.BaseAddress = new Uri("http://localhost:5024/api/");
                 client.Timeout = new TimeSpan(1, 0, 0);
 
                 HttpResponseMessage response = await client.PostAsJsonAsync("City", city);

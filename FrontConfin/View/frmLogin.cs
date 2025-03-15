@@ -39,15 +39,18 @@ namespace FrontConfin.View
 
                 UserResponse response = await UserService.Login(login);
                 
-                UserSession.Id = response.User.Id;
-                UserSession.Name = response.User.Name;
-                UserSession.Login = response.User.Login;
-                UserSession.Function = response.User.Function;
-                UserSession.Token = response.Token;
+                if(response.User != null)
+                {
+                    UserSession.Id = response.User.Id;
+                    UserSession.Name = response.User.Name;
+                    UserSession.Login = response.User.Login;
+                    UserSession.Function = response.User.Function;
+                    UserSession.Token = response.Token;
 
-                frmMenu screen = new frmMenu();
-                this.Hide();
-                screen.ShowDialog();
+                    frmMenu screen = new frmMenu();
+                    this.Hide();
+                    screen.ShowDialog();
+                }
             }
             catch (Exception ex)
             {

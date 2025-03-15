@@ -54,8 +54,6 @@ namespace FrontConfin.View
                 mtbBirthDate.Text = persona.BirthDate.ToString();
                 mtbWage.Text = persona.Wage.ToString();
                 cbGender.Text = persona.Gender;
-                cbCity.Text = persona.City?.Name;
-                cbState.Text = persona.City?.StateSigla;
             }
         }
         #endregion
@@ -71,13 +69,22 @@ namespace FrontConfin.View
         private async void frmPersonal_Load(object sender, EventArgs e)
         {
             List<string> namesCitys = new List<string>();
+            List<string> Acronomycs = new List<string>();
+
+            List<State> states = new List<State>();
             List<City> citys = new List<City>();
 
+            states = await StateService.GetAll();
             citys = await CityService.GetAll();
 
+            Acronomycs = states.Select(s => s.Sigla).ToList();
             namesCitys = citys.Select(x => x.Name).ToList();
 
-            cbCity.DataSource = namesCitys;
+            cbCity.DataSource = citys;
+            cbState.DataSource = Acronomycs;
+
+            cbCity.DisplayMember = "name";
+            cbCity.ValueMember = "id";
         }
         #endregion
 
@@ -100,9 +107,15 @@ namespace FrontConfin.View
             txtEmail.Clear();
             mtbBirthDate.Clear();
             mtbNumberPhone.Clear();
+            cbCity.Text = String.Empty;
+            cbState.Text = String.Empty;
+            cbGender.Text = String.Empty;
             mtbWage.Clear();
 
             txtName.Focus();
+
+            TabControl1.SelectedTab = tpDatails;
+
         }
         #endregion
 
@@ -113,7 +126,7 @@ namespace FrontConfin.View
             {
                 Persona persona = new Persona()
                 {
-                    Id = Guid.Parse(txtId.Text ?? throw new ArgumentNullException("O canmpo ID não pode ser vázio")),
+                    CityId = Guid.Parse(cbCity.SelectedValue.ToString()),
                     Name = txtName.Text ?? throw new ArgumentNullException("O campo nome não pode ser vázio"),
                     Email = txtEmail.Text ?? throw new ArgumentNullException("O canmpo email não pode ser vázio"),
                     NumberPhone = mtbNumberPhone.Text ?? throw new ArgumentNullException("O canmpo número de celular não pode ser vázio"),
@@ -123,7 +136,16 @@ namespace FrontConfin.View
                 }
                 ?? throw new Exception("Algo deu errado! verifique se todos os elementos tem o seus valores");
 
-                var result = _isUpdate ? await PersonaService.Put(persona) : await PersonaService.Post(persona);
+                var result = false;
+                if (_isUpdate)
+                {
+                    persona.Id = Guid.Parse(txtId.Text);
+                    result = await PersonaService.Put(persona);
+                }
+                else
+                {
+                    result = await PersonaService.Post(persona);
+                }
 
                 if (result)
                 {
@@ -241,5 +263,50 @@ namespace FrontConfin.View
             }
         }
         #endregion
+
+        #region cbDesc_checkChanged
+        private void cbDesc_CheckedChanged(object sender, EventArgs e)
+        {
+            btnSearch_Click(sender, e);
+        }
+        #endregion
+
+        #region frmPersonal_KeyDown
+        private void frmPersonal_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnSearch_Click(sender, e);
+            }
+        }
+        #endregion
+
+        #region txtSearch_KeyPress
+        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            UpdateData();
+        }
+        #endregion
+
+        #region btnSearch_Click
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            UpdateData();
+        }
+        #endregion
+
+        #region btnCancel_Click
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            btnNew_Click(sender, e);
+            UpdateData();
+            TabControl1.SelectedTab = tpRegistration;
+        }
+        #endregion
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }
